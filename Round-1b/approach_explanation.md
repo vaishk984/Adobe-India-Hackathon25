@@ -58,6 +58,59 @@ The final output includes:
 
 ---
 
+## Dockerfile (Round 1B)
+
+```dockerfile
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libmupdf-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+RUN pip install --no-cache-dir \
+    pymupdf \
+    sentence-transformers
+
+COPY . .
+
+CMD ["python", "persona_extractor.py"]
+
+```
+---
+
+## Execution Instructions
+
+1. **Build the Docker Image**
+
+```bash
+docker build --platform linux/amd64 -t persona-intelligence .
+```
+
+2. Prepare Input Folder Structure
+
+project-root/
+├── input/
+│   ├── Collection-1/
+│   │   ├── file1.pdf
+│   │   └── file2.pdf
+│   ├── Collection-2/
+│   └── Collection-3/
+
+3. Run the Container
+
+```bash
+docker run --rm -v "${PWD}/input:/app/input" -v "${PWD}/output:/app/output" persona-intelligence
+```
+4. Output Location
+/output/Collection-1/output.json
+/output/Collection-2/output.json
+/output/Collection-3/output.json
+
 ## Constraints Handling
 
 - **CPU-only**: All operations are lightweight and use PyTorch CPU backend.
@@ -67,9 +120,4 @@ The final output includes:
 
 ---
 
-## Future Improvements
-
-- Integrate section title detection using layout analysis or heading fonts.
-- Support multilingual PDFs.
-- Use lightweight fine-tuned models per persona category.
 
