@@ -1,0 +1,50 @@
+{
+    "title": "Welcome to the   “Connecting the Dots” Challenge  Rethink Reading. Rediscover Knowledge  What if every time you opened a PDF, it didn’t just  sit there —it  spoke to you ,  ",
+    "outline": [
+        {
+            "level": "H1",
+            "text": "1.   A  sample input PDF  (e.g., sample.pdf)  ",
+            "page": 3
+        },
+        {
+            "level": "H1",
+            "text": "3.   Sample Dockerfile  ",
+            "page": 4
+        },
+        {
+            "level": "H1",
+            "text": "4.   Sample Solution ",
+            "page": 4
+        },
+        {
+            "level": "H1",
+            "text": "2.   A working  Dockerfile   ",
+            "page": 5
+        },
+        {
+            "level": "H1",
+            "text": "3.   All dependencies installed within the container  ",
+            "page": 5
+        },
+        {
+            "level": "H1",
+            "text": "4.   A README.md that explains:  ",
+            "page": 5
+        },
+        {
+            "level": "H1",
+            "text": "1.   Metadata:  ",
+            "page": 8
+        },
+        {
+            "level": "H1",
+            "text": "2.   Extracted Section:  ",
+            "page": 8
+        },
+        {
+            "level": "H1",
+            "text": "3.   Sub-section Analysis:  ",
+            "page": 8
+        }
+    ]
+}
